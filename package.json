@@ -1,0 +1,28 @@
+{
+  "name": "ps2-stats",
+  "version": "1.0.0",
+  "description": "PS2-Stats",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnotherGenZ/PS2-Stats.git"
+  },
+  "author": "AnotherGenZ",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AnotherGenZ/PS2-Stats/issues"
+  },
+  "homepage": "https://github.com/AnotherGenZ/PS2-Stats#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "dotenv": "^8.2.0",
+    "eris": "^0.13.3",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.5.7"
+  }
+}
