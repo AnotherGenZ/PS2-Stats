@@ -14,7 +14,7 @@ const PREFIX = process.env.PREFIX || '~';
 const COLORS = {
     VS: 6234519,
     TR: 9767936,
-    NC: 1655445,
+    NC: 16774912,
     NS: 15920362
 }
 
@@ -44,7 +44,7 @@ client.on('messageCreate', async msg => {
 
     if (cmd === 'binary') {
         let player = params[0];
-        let sampleSize = params[1] || 1000;
+        let sampleSize = Number.parseInt(params[1]) || 1000;
 
         let res;
 
@@ -69,6 +69,10 @@ client.on('messageCreate', async msg => {
         let accuracy = $('.infobox', '.killFeedBox')[3].children[1].children[0].children[0].data;
         let ivi = $('.infobox', '.killFeedBox')[4].children[1].children[0].children[0].data;
         let weaponOfChoice = $('.infobox', '.killFeedBox')[5].children[1].children[1].children[0].data;
+
+        let deaths = Math.round(sampleSize / (Number.parseFloat(trueKD) + 1));
+        let kills = sampleSize - deaths;
+         
 
         client.createMessage(msg.channel.id, {
             embed: {
@@ -105,7 +109,10 @@ client.on('messageCreate', async msg => {
                         value: weaponOfChoice,
                         inline: true
                     },
-                ]
+                ],
+                footer: {
+                    text: `${kills} Kills / ${deaths} Deaths`
+                }
             }
         });
     } else if (cmd === 'recursion') {
