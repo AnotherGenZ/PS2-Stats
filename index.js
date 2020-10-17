@@ -68,7 +68,7 @@ client.on('messageCreate', async msg => {
         let hsr = $('.infobox', '.killFeedBox')[2].children[1].children[0].children[0].data;
         let accuracy = $('.infobox', '.killFeedBox')[3].children[1].children[0].children[0].data;
         let ivi = $('.infobox', '.killFeedBox')[4].children[1].children[0].children[0].data;
-        let weaponOfChoice = $('.infobox', '.killFeedBox')[5].children[1].children[1].children[0].data;
+        let weaponOfChoice = $('.infobox', '.killFeedBox')[5].children[1].children[1].children[0]?.data;
 
         let deaths = Math.round(sampleSize / (Number.parseFloat(trueKD) + 1));
         let kills = sampleSize - deaths;
@@ -106,7 +106,7 @@ client.on('messageCreate', async msg => {
                     },
                     {
                         name: 'Weapon of Choice',
-                        value: weaponOfChoice,
+                        value: weaponOfChoice ? weaponOfChoice : 'N/A',
                         inline: true
                     },
                 ],
