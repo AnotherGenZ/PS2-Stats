@@ -109,6 +109,10 @@ client.on('messageCreate', async msg => {
                         value: weaponOfChoice ? weaponOfChoice : 'N/A',
                         inline: true
                     },
+                    {
+                        name: "Events",
+                        value: `[Feed](http://stats.binarycoder.info/playerinfo.php?playerName=${player}&sampleSize=${sampleSize})`
+                      }
                 ],
                 footer: {
                     text: `${kills} Kills / ${deaths} Deaths`
